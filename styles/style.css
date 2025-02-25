@@ -58,7 +58,7 @@ body {
   margin-top: auto;
   width: 50rem;
   max-width: 100%;
-  padding: 20px;
+  padding: 1rem;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -67,8 +67,8 @@ body {
 }
 
 h1 {
-  font-size: clamp(1.5rem, 2vw + 1rem, 3rem); /* font-size relative to viewport, but with a max */
-  letter-spacing: -0.05em;
+  font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+  letter-spacing: -0.025em;
   margin: 0;
   font-weight: 100;
   align-self: flex-start;
@@ -85,7 +85,7 @@ h2 {
   line-height: 1;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 50rem) {
   h1 {
     font-size: 2em;
   }
@@ -163,7 +163,34 @@ a:hover {
 
 footer {
   margin-top: auto;
-  padding: 20px;
+  padding: 1rem;
   text-align: center;
   width: 100%;
+}
+.icon {
+  display: inline-block;
+  margin: 0;
+  font-size: 1.5em;
+  color: var(--color-text);
+  width: 1em;
+  height: 1em;
+  vertical-align: text-bottom;
+  transition: transform 0.3s, color 0.3s;
+
+  path {
+    fill: var(--color-text);
+    stroke: var(--color-text);
+  }
+}
+a:hover .icon {
+  transform: rotate(360deg);
+  color: var(--color-primary);
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
