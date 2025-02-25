@@ -1,0 +1,158 @@
+/* Reset CSS */
+:root {
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-monospace: ui-monospace, "Cascadia Code", "Source Code Pro",
+    Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --color-primary: #007bff;
+  --color-accent: #ffcc00;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #000000;
+    --color-text: #ffffff;
+  }
+  body {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: #ffffff;
+    --color-text: #000000;
+  }
+  body {
+    color-scheme: light;
+  }
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.5;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.container {
+  margin-top: auto;
+  max-width: 800px;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+h1 {
+  font-size: calc(1.5em + 1vw);
+  margin: 0;
+  font-weight: 300;
+  align-self: flex-start;
+  line-height: 1;
+}
+
+h2 {
+  font-size: calc(2em + 3vw);
+  letter-spacing: -0.05em;
+  margin: 0;
+  font-weight: 900;
+  text-align: left;
+  align-self: flex-start;
+  line-height: 1;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 0px 0 40px 0;
+  font-weight: bold;
+  text-align: left;
+  align-self: flex-start;
+  font-family: var(--font-family-monospace);
+  position: relative;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--color-primary);
+  transition: text-decoration-color 0.3s, text-decoration-thickness 0.3s,
+    text-underline-offset 0.3s;
+}
+a:hover {
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 0.25em;
+  text-underline-offset: 0.3em;
+}
+
+.container p {
+  font-size: 1em;
+  margin: 20px 0 0;
+  font-family: var(--font-family-monospace);
+  line-height: 1.6;
+}
+
+.highlight {
+  position: relative;
+  color: #ffffff;
+  background-color: var(--color-primary);
+  transform: rotate(-2deg);
+  display: inline-block;
+}
+
+.highlight:nth-child(1) {
+  background-color: #0064ce;
+  transform: rotate(2deg);
+}
+
+.highlight:nth-child(2) {
+  color: #000000;
+  background-color: var(--color-accent);
+  transform: rotate(-2deg);
+}
+
+.highlight:nth-child(3) {
+  background-color: #1d7b33;
+  transform: rotate(1deg);
+}
+
+.highlight:nth-child(4) {
+  background-color: #dc3545;
+  transform: rotate(-1deg);
+}
+
+.highlight:nth-child(5) {
+  color: #000000;
+  background-color: #17a2b8;
+  transform: rotate(1deg);
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
