@@ -1,13 +1,4 @@
 /* Reset CSS */
-:root {
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-family-monospace: ui-monospace, "Cascadia Code", "Source Code Pro",
-    Menlo, Consolas, "DejaVu Sans Mono", monospace;
-  --color-primary: #007bff;
-  --color-accent: #ffcc00;
-}
-
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -21,6 +12,15 @@ html {
   padding: 0;
 }
 
+:root {
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-monospace: ui-monospace, "Cascadia Code", "Source Code Pro",
+    Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --color-primary: #007bff;
+  --color-accent: #ffcc00;
+}
+  
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: #000000;
@@ -56,17 +56,19 @@ body {
 
 .container {
   margin-top: auto;
-  max-width: 800px;
+  width: 50rem;
+  max-width: 100%;
   padding: 20px;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 h1 {
-  font-size: calc(1.5em + 1vw);
+  font-size: clamp(1.5rem, 2vw + 1rem, 3rem); /* font-size relative to viewport, but with a max */
+  letter-spacing: -0.05em;
   margin: 0;
   font-weight: 300;
   align-self: flex-start;
@@ -74,13 +76,22 @@ h1 {
 }
 
 h2 {
-  font-size: calc(2em + 3vw);
+  font-size: clamp(2rem, 4vw + 1rem, 6rem);
   letter-spacing: -0.05em;
   margin: 0;
   font-weight: 900;
   text-align: left;
   align-self: flex-start;
   line-height: 1;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 4em;
+  }
 }
 
 h3 {
